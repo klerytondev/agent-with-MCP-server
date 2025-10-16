@@ -34,7 +34,7 @@ suas ferramentas para responder o usuário.
             'content': input('Digite: ')
         }
         
-        for step in agent_executor.astream(
+        async for step in agent_executor.astream(
             {'messages': [input_message]}, config, stream_mode='values'
         ):
             step['messages'][-1].pretty_print()
